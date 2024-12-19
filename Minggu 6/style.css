@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Gaya untuk header */
+header {
+  background-color: #e75480;
+  color: black;
+  padding: 2em 0;
+  text-align: center;
+}
+
+/* Navbar */
+nav {
+  background-color: #dea5a4;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #674c47;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.home-section {
+  background-attachment: fixed; /* Parallax effect */
+}
+
+.home-section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('network.jpg') no-repeat center center/cover;
+  position: relative;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Overlay to Darken Background */
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust darkness by changing opacity */
+  z-index: 1;
+}
+
+/* Content Styling */
+.home-content {
+  position: relative;
+  z-index: 2; /* Puts content above the overlay */
+}
+
+.home-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+}
+
+.home-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Button Styling */
+.btn {
+  padding: 10px 20px;
+  background-color: #b80065;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff8a65;
+  transform: scale(1.05); /* Small zoom effect on hover */
+}
+
+/* Keyframes for Fade-in Effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Gaya untuk bagian "Tentang Saya" */
+.about-section {
+  padding: 60px 0;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-content h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Skill Bar Styling */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill span {
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-bar {
+  width: 70%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #cf1e8c;
+  border-radius: 5px;
+  transition: width 0.6s ease-in-out;
+}
+
+/* Gaya untuk portofolio */
+.portfolio-items {
+  display: grid; /* Menggunakan grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Menentukan kolom dengan lebar minimum dan maksimum */
+  gap: 20px; /* Jarak antar item */
+  background-color: #ffffff;
+}
+
+.portfolio-item {
+  background-color: rgb(247, 214, 234); /* Warna latar belakang item portofolio */
+  border-radius: 8px; /* Sudut membulat */
+  overflow: hidden; /* Menyembunyikan bagian yang melampaui batas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px); /* Efek naik saat hover */
+}
+
+.portfolio-item img {
+  width: 100%; /* Mengatur gambar agar memenuhi lebar item */
+  height: auto; /* Tinggi otomatis agar proporsional */
+}
+
+.portfolio-description {
+  padding: 15px; /* Ruang dalam untuk deskripsi */
+  text-align: center; /* Rata tengah teks */
+}
+
+.portfolio-description h3 {
+  margin: 10px 0; /* Margin atas dan bawah judul */
+}
+
+.portfolio-description p {
+  color: #666; /* Warna teks deskripsi */
+  margin-bottom: 15px; /* Jarak bawah deskripsi */
+}
+
+.btn {
+  display: inline-block; /* Menampilkan tombol sebagai blok */
+  padding: 10px 20px; /* Ruang dalam untuk tombol */
+  background-color: #ff6347; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks tombol */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  border-radius: 5px; /* Sudut membulat tombol */
+  transition: background-color 0.3s; /* Efek transisi saat hover */
+}
+
+.btn:hover {
+  background-color: #e5533d; /* Warna saat hover */
+}
+
+.experience-items {
+  display: flex; /* Menampilkan item pengalaman dalam baris */
+  flex-direction: column; /* Mengatur arah menjadi kolom */
+  gap: 20px; /* Jarak antar item */
+}
+
+.experience-item {
+  background-color: aquamarine; /* Warna latar belakang item pengalaman */
+  background: url('INTERNET.jpg') no-repeat center center/cover;
+  border-radius: 8px; /* Sudut membulat */
+  padding: 10px; /* Ruang dalam untuk item pengalaman */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.experience-item:hover {
+  transform: translateY(-5px); /* Efek naik saat hover */
+}
+
+.experience-item h3 {
+  margin-bottom: 10px; /* Jarak bawah judul */
+  font-size: 1.5em; /* Ukuran font untuk judul */
+}
+
+.date {
+  display: block; /* Menampilkan tanggal sebagai blok */
+  font-size: 0.9em; /* Ukuran font untuk tanggal */
+  color: #999; /* Warna untuk teks tanggal */
+  margin-bottom: 10px; /* Jarak bawah tanggal */
+}
+
+.experience-item p {
+  color: #333; /* Warna teks deskripsi */
+  line-height: 1.5; /* Jarak antar baris */
+}
+
+.contact-form {
+  max-width: 600px; /* Lebar maksimum form */
+  margin: 0 auto; /* Center-align form */
+  padding: 20px;
+  background-color: #fff; /* Latar belakang putih untuk form */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen form dalam kolom */
+  gap: 15px; /* Jarak antar elemen form */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Menyusun label dan input dalam kolom */
+}
+
+.form-group label {
+  font-weight: bold; /* Membuat teks label tebal */
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px; /* Padding dalam input */
+  border: 1px solid #ddd; /* Border tipis */
+  border-radius: 5px; /* Sudut membulat */
+  font-size: 1em;
+  transition: border-color 0.3s; /* Efek transisi untuk border */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff6347; /* Warna border saat fokus */
+  outline: none;
+}
+
+textarea {
+  resize: none; /* Menonaktifkan kemampuan untuk mengubah ukuran textarea */
+}
+
+.btn {
+  width: 100%; /* Lebar penuh tombol */
+  padding: 10px 0;
+  background-color: #ff6347; /* Warna latar belakang tombol */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e5533d; /* Warna saat hover */
+}
+
+/* Gaya untuk footer */
+.footer {
+  background-color: #333; /* Warna latar belakang footer */
+  color: #fff; /* Warna teks */
+  padding: 40px 0; /* Padding atas dan bawah */
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-content h3 {
+  font-size: 1.5em; /* Ukuran font nama */
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  max-width: 600px; /* Membatasi lebar teks */
+  font-size: 1em;
+  line-height: 1.6; /* Jarak antar baris */
+  color: #ccc;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 30px; /* Lebar ikon */
+  height: 30px; /* Tinggi ikon */
+  transition: transform 0.3s;
+  border-radius: 50%; /* Membuat ikon bulat */
+}
+
+/* Efek hover untuk ikon */
+.social-icons img:hover {
+  transform: scale(1.1); /* Membuat ikon sedikit membesar saat di-hover */
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ff6347; /* Warna tautan */
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s; /* Efek transisi warna */
+}
+
+.footer-links a:hover {
+  color: #e5533d; /* Warna saat hover */
+}
+
+.footer-copyright {
+  font-size: 0.9em; /* Ukuran font kecil */
+  color: #777;
+  margin-top: 20px;
+}
